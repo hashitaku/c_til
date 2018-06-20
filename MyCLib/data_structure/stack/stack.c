@@ -1,0 +1,30 @@
+#include"stack.h"
+
+void stack_init(Stack *ptr_struct){
+    ptr_struct->top = 0;
+}
+
+int stack_full(Stack *ptr_struct){
+    if(ptr_struct->top == 100){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int stack_empty(Stack *ptr_struct){
+    if(ptr_struct->top == 0){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+void stack_push(Stack *ptr_struct, int input){
+    ptr_struct->data[ptr_struct->top] = input;
+    ptr_struct->top++;
+}
+
+int stack_pop(Stack *ptr_struct){
+    return ptr_struct->data[--ptr_struct->top];
+}
