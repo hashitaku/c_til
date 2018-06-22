@@ -7,6 +7,8 @@
 
 void swap(int *, int *);
 
+int max(int ,int);
+
 int compare(int *, int *);
 
 int median_3(int, int, int);
