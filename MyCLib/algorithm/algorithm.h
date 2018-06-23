@@ -1,13 +1,10 @@
-/*アルゴリズム勉強用ライブラリ*/
-/*汎用性のある関数は前方宣言*/
-/*2018/04/07作成*/
-/*ヘッダ部*/
-
 #pragma once
 
 void swap(int *, int *);
 
-int max(int ,int);
+int max(int, int);
+
+int min(int, int);
 
 int compare(int *, int *);
 

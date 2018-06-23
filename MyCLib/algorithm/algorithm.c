@@ -14,6 +14,14 @@ int max(int data1, data2){
     }
 }
 
+int min(int data1, int data2){
+    if(data1 >= data2){
+        return data2;
+    }else{
+        return data1;
+    }
+}
+
 int compare(int *data1, int *data2){
     return *data1 - *data2;
 }
