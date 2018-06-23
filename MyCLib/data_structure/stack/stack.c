@@ -5,7 +5,7 @@ void stack_init(Stack *ptr_struct){
 }
 
 int stack_full(Stack *ptr_struct){
-    if(ptr_struct->top == 100){
+    if(ptr_struct->top == STACK_DATA_MAX){
         return 1;
     }else{
         return 0;
