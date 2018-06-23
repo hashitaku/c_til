@@ -1,8 +1,10 @@
 #pragma once
 
+#define STACK_DATA_MAX 100
+
 typedef struct{
     int top;
-    int data[100];
+    int data[STACK_DATA_MAX];
 }Stack;
 
 void stack_init(Stack *);
