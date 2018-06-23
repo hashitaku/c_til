@@ -1,14 +1,17 @@
-/*アルゴリズム勉強用ライブラリ*/
-/*汎用性のある関数は前方宣言*/
-/*2018/04/07作成*/
-/*実装部*/
-
 #include"algorithm.h"
 
 void swap(int *data1, int *data2){
     int tmp = *data1;
     *data1 = *data2;
     *data2 = tmp;
+}
+
+int max(int data1, data2){
+    if(data1 >= data2){
+        return data1;
+    }else{
+        return data2;
+    }
 }
 
 int compare(int *data1, int *data2){
