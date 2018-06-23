@@ -22,8 +22,8 @@ int min(int data1, int data2){
     }
 }
 
-int compare(int *data1, int *data2){
-    return *data1 - *data2;
+int compare(const int *data1, const int *data2){
+    return *(int *)data1 - *(int *)data2;
 }
 
 int median_3(int num1, int num2, int num3){
