@@ -6,7 +6,7 @@ int max(int, int);
 
 int min(int, int);
 
-int compare(int *, int *);
+int compare(const int *, const int *);
 
 int median_3(int, int, int);
 
