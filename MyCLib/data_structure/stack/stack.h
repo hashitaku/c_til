@@ -1,4 +1,5 @@
 #pragma once
+#include<stdio.h>
 
 #define STACK_DATA_MAX 100
 
