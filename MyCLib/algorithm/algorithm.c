@@ -6,7 +6,7 @@ void swap(int *data1, int *data2){
     *data2 = tmp;
 }
 
-int max(int data1, data2){
+int max(int data1, int data2){
     if(data1 >= data2){
         return data1;
     }else{
