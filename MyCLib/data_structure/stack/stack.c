@@ -21,7 +21,7 @@ int stack_empty(Stack *ptr_struct){
 }
 
 void stack_push(Stack *ptr_struct, int input){
-    if(stack_full == 1){
+    if(stack_full(ptr_struct) == 0){
         printf("stack is full\n");
         return;
     }else{
@@ -31,5 +31,10 @@ void stack_push(Stack *ptr_struct, int input){
 }
 
 int stack_pop(Stack *ptr_struct){
-    return ptr_struct->data[--ptr_struct->top];
+    if(stack_empty(ptr_struct) == 0){
+        printf("stack is empty\n", );
+        return 1;
+    }else{
+        return ptr_struct->data[--ptr_struct->top];
+    }
 }
