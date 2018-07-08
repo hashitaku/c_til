@@ -8,3 +8,5 @@ typedef struct{
     int tail;
     int data[QUEUE_DATA_MAX];
 }Queue;
+
+void queue_init(Queue *);
