@@ -27,3 +27,5 @@ void insertion_sort(int *, int);
 void quick_sort_up(int *, int, int);
 
 void quick_sort_down(int *, int, int);
+
+int gcd(int, int);
