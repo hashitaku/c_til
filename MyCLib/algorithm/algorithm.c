@@ -152,3 +152,12 @@ void quick_sort_down(int *ptr_array, int left_index, int right_index){
     if((cnt_first - 1) > left_index) quick_sort_down(ptr_array, left_index, cnt_first - 1);
     if((cnt_second + 1) < right_index) quick_sort_down(ptr_array, cnt_second + 1, right_index);
 }
+
+int gcd(int a, int b){
+    if(a < b) swap(&a, &b);
+    if(b == 0){
+        return a;
+    }else{
+        return gcd(b, a % b);
+    }
+}
