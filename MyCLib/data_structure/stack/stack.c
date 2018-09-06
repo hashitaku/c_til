@@ -35,6 +35,6 @@ int stack_pop(Stack *ptr_struct){
         printf("stack is empty\n");
         return 1;
     }else{
-        return ptr_struct->data[--ptr_struct->top];
+        return ptr_struct->data[ptr_struct->top--];
     }
 }
