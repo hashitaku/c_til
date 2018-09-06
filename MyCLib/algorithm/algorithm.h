@@ -1,4 +1,5 @@
 #pragma once
+#include<stdbool.h>
 
 void swap(int *, int *);
 
@@ -15,6 +16,10 @@ int average_3(int, int, int);
 unsigned int reversed(unsigned int);
 
 void partition(int *, int, int);
+
+int is_up_sorted(int *, int);
+
+int is_down_sorted(int *, int);
 
 void bubble_sort(int *, int);
 

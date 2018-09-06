@@ -78,6 +78,24 @@ void partition(int *ptr_array, int left_index, int right_index){
     }
 }
 
+int is_up_sorted(int *ptr_array, int index){
+    for(int i = 0; i < index - 1; i++){
+        if(ptr_array[i] > ptr_array[i + 1]){
+            return false;
+        }
+    }
+    return true;
+}
+
+int is_down_sorted(int *ptr_array, int index){
+    for(int i = 0; i < index - 1; i++){
+        if(ptr_array[i] < ptr_array[i + i]){
+            return false;
+        }
+    }
+    return true;
+}
+
 void bubble_sort(int *ptr_array, int index){
     for(int i = 0; i < index; i++){
         for(int j = index - 1; j > i; j--){
