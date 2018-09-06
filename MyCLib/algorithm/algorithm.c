@@ -153,6 +153,15 @@ void quick_sort_down(int *ptr_array, int left_index, int right_index){
     if((cnt_second + 1) < right_index) quick_sort_down(ptr_array, cnt_second + 1, right_index);
 }
 
+int *linear_search(int *ptr_array, int index, int value){
+    for(int i = 0; i < index; i++){
+        if(ptr_array[i] == value){
+            return ptr_array + i;
+        }
+    }
+    return ptr_array + index;
+}
+
 int gcd(int a, int b){
     if(a < b) swap(&a, &b);
     if(b == 0){
