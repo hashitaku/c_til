@@ -180,6 +180,21 @@ int *linear_search(int *ptr_array, int index, int value){
     return ptr_array + index;
 }
 
+int *binary_search(int *ptr_array, int index, int value){
+    int left_index = 0, right_index = index;
+    while(left_index < right_index){
+        int mid = (left_index + right_index) / 2;
+        if(value == ptr_array[mid]){
+            return ptr_array + mid;
+        }else if(value > ptr_array[mid]){
+            left_index = mid + 1;
+        }else{
+            right_index = mid;
+        }
+    }
+    return ptr_array + index;
+}
+
 int gcd(int a, int b){
     if(a < b) swap(&a, &b);
     if(b == 0){

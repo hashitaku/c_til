@@ -35,6 +35,8 @@ void quick_sort_down(int *, int, int);
 
 int *linear_search(int *, int, int);
 
+int *binary_search(int *, int , int);
+
 int gcd(int, int);
 
 int lcm(int, int);
