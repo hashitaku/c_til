@@ -37,6 +37,8 @@ int *linear_search(int *, int, int);
 
 int *binary_search(int *, int , int);
 
+int accumelate(int *, int *, int);
+
 int gcd(int, int);
 
 int lcm(int, int);

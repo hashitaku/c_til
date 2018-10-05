@@ -195,6 +195,14 @@ int *binary_search(int *ptr_array, int index, int value){
     return ptr_array + index;
 }
 
+int accumulate(int *ptr_begin, int *ptr_end, int init){
+    while(ptr_begin != ptr_end){
+        init += *ptr_begin;
+        ptr_begin++;
+    }
+    return init;
+}
+
 int gcd(int a, int b){
     if(a < b) swap(&a, &b);
     if(b == 0){
