@@ -6,7 +6,7 @@ int vector_init(Vector *ptr_struct){
 
     ptr_struct->data = (int*)malloc(sizeof(int));
     if(ptr_struct->data == NULL){
-    	printf("vector init error\n");
+    	fprintf(stderr, "vector init error\n");
     	return EXIT_FAILURE;
     }else{
     	ptr_struct->size = 1;
@@ -31,7 +31,7 @@ int vector_clear(Vector *ptr_struct){
 int vector_resize(Vector *ptr_struct, size_t add_size){
         ptr_struct->data = (int*)realloc(ptr_struct->data, sizeof(int) * (ptr_struct->size + add_size));
         if(ptr_struct->data == NULL){
-        	printf("vector resize error\n");
+        	fprintf(stderr, "vector resize error\n");
         	return EXIT_FAILURE;
         }else{
         	ptr_struct->size += add_size;
