@@ -2,6 +2,7 @@
 #define ALGORITHM_H
 
 #include<stdbool.h>
+#include<stdio.h>
 
 void swap(int *, int *);
 
@@ -38,11 +39,13 @@ void quick_sort_down(int *, int, int);
 int *linear_search(int *, int, int);
 
 int *binary_search(int *, int , int);
-
+ 
 int accumelate(int *, int *, int);
 
 int gcd(int, int);
 
 int lcm(int, int);
+
+char *rotate(char *, char *, char *);
 
 #endif ALGORITHM_H

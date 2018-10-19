@@ -215,3 +215,26 @@ int gcd(int a, int b){
 int lcm(int a, int b){
     return a * b / gcd(a, b);
 }
+
+
+char *rotate(char *ptr_str_begin, char *ptr_str_middle, char *ptr_str_end){
+    if(ptr_str_middle > ptr_str_end) return NULL;
+
+    unsigned int diff_begin = (unsigned int)ptr_str_middle - (unsigned int)ptr_str_begin; //byte
+    unsigned int diff_end = (unsigned int)ptr_str_end - (unsigned int)ptr_str_middle; //byte
+
+    char *tmp = (char *)malloc(diff_begin);
+    if(tmp == NULL){
+        fprintf(stderr, "malloc error\n");
+        return NULL;
+    }
+    memcpy(tmp, ptr_str_begin, diff_begin);
+
+    memmove(ptr_str_begin, ptr_str_middle, diff_end);
+
+    memmove(ptr_str_end - diff_begin, tmp, diff_begin);
+
+    free(tmp);
+
+    return ptr_str_begin;
+}
