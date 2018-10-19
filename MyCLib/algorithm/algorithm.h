@@ -1,4 +1,6 @@
-#pragma once
+#ifndef ALGORITHM_H
+#define ALGORITHM_H
+
 #include<stdbool.h>
 
 void swap(int *, int *);
@@ -42,3 +44,5 @@ int accumelate(int *, int *, int);
 int gcd(int, int);
 
 int lcm(int, int);
+
+#endif ALGORITHM_H

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VECTOR_H
+#define VECTOR_H
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -22,3 +23,5 @@ int vector_resize(Vector *ptr_struct, size_t add_size);
 int vector_is_full(Vector *ptr_struct);
 
 int vector_push_back(Vector *ptr_struct, int input);
+
+#endif VECTOR_H
