@@ -20,4 +20,4 @@ void stack_push(Stack *, int);
 
 int stack_pop(Stack *);
 
-#endif STACK_H
+#endif //STACK_H
