@@ -26,4 +26,6 @@ int vector_is_full(Vector *ptr_struct);
 
 int vector_push_back(Vector *ptr_struct, T input);
 
+size_t vector_size(Vector *ptr_struct);
+
 #endif //VECTOR_H
