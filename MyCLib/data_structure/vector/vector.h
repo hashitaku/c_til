@@ -1,12 +1,15 @@
-#pragma once
+#ifndef VECTOR_H
+#define VECTOR_H
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<stddef.h>
 #include<stdbool.h>
 
+typedef int T;
+
 typedef struct{
-    int *data;
+    T *data;
     size_t size;
     size_t top;
 }Vector;
@@ -21,4 +24,6 @@ int vector_resize(Vector *ptr_struct, size_t add_size);
 
 int vector_is_full(Vector *ptr_struct);
 
-int vector_push_back(Vector *ptr_struct, int input);
+int vector_push_back(Vector *ptr_struct, T input);
+
+#endif VECTOR_H

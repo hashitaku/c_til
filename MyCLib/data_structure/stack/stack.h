@@ -1,4 +1,6 @@
-#pragma once
+#ifndef STACK_H
+#define STACK_H
+
 #include<stdio.h>
 
 #define STACK_DATA_MAX 100
@@ -17,3 +19,5 @@ int stack_empty(Stack *);
 void stack_push(Stack *, int);
 
 int stack_pop(Stack *);
+
+#endif //STACK_H

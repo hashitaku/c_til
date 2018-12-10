@@ -1,10 +1,29 @@
-## cmakeversion
-cmake_minimum_required(VERSION 3.11)
+# cmakeversion
+cmake_minimum_required(VERSION 3.10.2)
 
-## language
-enable_language(C)
+# project name
+project(MyCLib C)
 
-#build directry
+# setting
+set(CMAKE_C_COMPILER clang)
+set(CMAKE_C_STANDARD 11)
+
+# compile option
+# cmake -DCMAKE_BUILD_TYPE=
+set(CMAKE_C_FLAGS "-pedantic")
+set(CMAKE_C_FLAGS_DEBUG "-Wall -Wextra")
+set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
+
+# output directory
+
+# top tree(MyCLib/out)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/out)
+
+# build directry
 add_subdirectory(algorithm)
-add_subdirectoty(data_structure/stack)
+add_subdirectory(data_structure/stack)
 add_subdirectory(data_structure/queue)
+add_subdirectory(data_structure/list)
+add_subdirectory(data_structure/vector)
+
+# create static lib
