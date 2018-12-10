@@ -42,7 +42,7 @@ int vector_resize(Vector *ptr_struct, size_t add_size){
     }
 }
 
-int vector_is_full(Vector *ptr_struct){
+bool vector_is_full(Vector *ptr_struct){
     if(ptr_struct->size == ptr_struct->top){
         return true;
     }else{
