@@ -31,17 +31,18 @@ int vector_clear(Vector *ptr_struct){
 }
 
 int vector_resize(Vector *ptr_struct, size_t add_size){
-        ptr_struct->data = (T *)realloc(ptr_struct->data, sizeof(T) * (ptr_struct->size + add_size));
-        if(ptr_struct->data == NULL){
-        	fprintf(stderr, "vector resize error\n");
-        	return EXIT_FAILURE;
-        }else{
-        	ptr_struct->size += add_size;
-        	return EXIT_SUCCESS;
-        }
+    T *ptr_tmp = (T *)realloc(ptr_struct->data, sizeof(T) * (ptr_struct->size + add_size)); //reallocがNULLならメモリリークする可能性あり 一時変数へ
+    if(ptr_tmp == NULL){
+        fprintf(stderr, "vector resize error\n");
+        return EXIT_FAILURE;
+    }else{
+        ptr_struct->data = ptr_tmp;
+        ptr_struct->size += add_size;
+        return EXIT_SUCCESS;
+    }
 }
 
-int vector_is_full(Vector *ptr_struct){
+bool vector_is_full(Vector *ptr_struct){
     if(ptr_struct->size == ptr_struct->top){
         return true;
     }else{
@@ -60,4 +61,8 @@ int vector_push_back(Vector *ptr_struct, int input){
 		ptr_struct->top++;
 		return EXIT_SUCCESS;
     }
+}
+
+size_t vector_size(Vector *ptr_struct){
+    return ptr_struct->size;
 }
