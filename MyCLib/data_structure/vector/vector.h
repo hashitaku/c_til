@@ -22,7 +22,7 @@ int vector_clear(Vector *ptr_struct);
 
 int vector_resize(Vector *ptr_struct, size_t add_size);
 
-int vector_is_full(Vector *ptr_struct);
+bool vector_is_full(Vector *ptr_struct);
 
 int vector_push_back(Vector *ptr_struct, T input);
 
