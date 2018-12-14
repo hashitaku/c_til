@@ -64,5 +64,5 @@ int vector_push_back(Vector *ptr_struct, int input){
 }
 
 size_t vector_size(Vector *ptr_struct){
-    return ptr_struct->size;
+    return ptr_struct->top;
 }
