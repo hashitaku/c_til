@@ -42,6 +42,18 @@ int vector_resize(Vector *ptr_struct, size_t add_size){
     }
 }
 
+int vector_resize(Vector *ptr_struct, size_t chenge_size){
+    T *ptr_tmp = (T *)realloc(ptr_struct->data, sizeof(T) * (chenge_size));
+    if(ptr_tmp == NULL){
+        fprintf(stderr, "vector resize error\n");
+        return EXIT_FAILURE;
+    }else{
+        ptr_struct->data = ptr_tmp;
+        ptr_struct->size = chenge_size;
+        return EXIT_SUCCESS;
+    }
+}
+
 bool vector_is_full(Vector *ptr_struct){
     if(ptr_struct->size == ptr_struct->top){
         return true;
