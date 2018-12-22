@@ -82,3 +82,12 @@ size_t vector_size(Vector *ptr_struct){
 size_t vector_max_size(Vector *ptr_struct){
     return ptr_struct->size;
 }
+
+T *vector_at(Vector *ptr_struct, size_t n){
+    if(n >= vector_size(ptr_struct)){
+        fprintf(stderr, "vector out of range\n");
+        exit(1);
+    }
+
+    return &ptr_struct->data[n];
+}

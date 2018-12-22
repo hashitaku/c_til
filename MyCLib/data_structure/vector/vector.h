@@ -32,4 +32,6 @@ size_t vector_size(Vector *ptr_struct);
 
 size_t vector_max_size(Vector *ptr_struct);
 
+T *vector_at(Vector *ptr_struct, size_t n);
+
 #endif //VECTOR_H
