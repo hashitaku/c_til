@@ -30,6 +30,6 @@ int vector_push_back(Vector *ptr_struct, T input);
 
 size_t vector_size(const Vector *ptr_struct);
 
-size_t vector_max_size(const Vector *ptr_struct);
+size_t vector_capacity(const Vector *ptr_struct);
 
 #endif //VECTOR_H
