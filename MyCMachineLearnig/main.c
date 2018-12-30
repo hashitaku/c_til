@@ -6,9 +6,7 @@
 
 const double eta = 0.1; //学習率
 const size_t epoch = 5; //学習回数
-double a = 1.0; //重みベクトル
-double b = 1.0; //重み
-double c = -1.0; //重み
+double w[3]; //重みベクトル
 
 int main(){
     
@@ -39,18 +37,18 @@ int main(){
 
     for(size_t i = 0; i < epoch; i++){
         for(size_t j = 0; j < count_line(data_file); j++){
-            int error = data.flag[j] - step(a, b, c, data.english[j], data.math[j]);
+            int error = data.flag[j] - step(w[0], w[1], w[2], data.english[j], data.math[j]);
             if(error != 0){
-                a = a + eta * error * data.english[j];
-                b = b + eta * error * data.math[j];
-                c = c + eta * error * data.flag[j];
+                w[0] += eta * error * data.english[j];
+                w[1] += eta * error * data.math[j];
+                w[2] += eta * error * data.flag[j];
             }
 
             fprintf(pipe, "set title 'machine learning(eta:%g) : epoch %zd'\n", eta, i);
             fprintf(pipe, "set label 1 point pointtype 7 pointsize 2 at first %f, %f \"\"\n", data.english[j], data.math[j]);
             fprintf(pipe, "plot '-' using 1:($3 == -1 ? $2 : 1/0) with points lc rgb \"blue\" title 'math course',"
                           "'-' using 1:($3 == 1 ? $2 : 1/0) with points lc rgb \"red\" title 'english course',"
-                          "%f*x %+f\n", -(a / b), -(c / b));
+                          "%f*x %+f\n", -(w[0] / w[1]), -(w[2] / w[1]));
 
             for(size_t i = 0; i < 2; i++){
                 for(size_t j = 0; j < count_line(data_file); j++){
