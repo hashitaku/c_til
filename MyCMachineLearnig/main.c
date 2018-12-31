@@ -1,12 +1,16 @@
 #define _GNU_SOURCE
 #include<stdio.h>
 #include<stdlib.h>
+#include<math.h>
 
 #include"./core.h"
 
 const double eta = 0.1; //学習率
-const size_t epoch = 5; //学習回数
+const size_t epoch = 10; //学習回数
+const double convergence_error = 0.0001;
 double w[3]; //重みベクトル
+
+double f(double, double, double);
 
 int main(){
     
@@ -32,10 +36,24 @@ int main(){
     fprintf(pipe, "set yrange [-25:125]\n");
     fprintf(pipe, "set xlabel 'english points'\n");
     fprintf(pipe, "set ylabel 'math points'\n");
-    fprintf(pipe, "set terminal gif animate optimize delay 13 size 600, 600\n"); //gifへ出力 必要ないならコメントアウト
-    fprintf(pipe, "set output 'tmp.gif'\n"); //gifへ出力 必要ないならコメントアウト
+    // fprintf(pipe, "set terminal gif animate optimize delay 13 size 600, 600\n"); //gifへ出力 必要ないならコメントアウト
+    // fprintf(pipe, "set output 'tmp.gif'\n"); //gifへ出力 必要ないならコメントアウト
 
     for(size_t i = 0; i < epoch; i++){
+        double rmse = 0.0;
+
+        for(size_t j = 0; j < count_line(data_file); j++){
+            int error = data.flag[j] - step(w[0], w[1], w[2], data.english[j], data.math[j]);
+            if(error != 0){
+                rmse += pow(data.math[j] - f(-(w[0] / w[1]), -(w[2] / w[1]), data.english[j]), 2.0);
+            }
+        }
+
+        rmse = sqrt(rmse / count_line(data_file));
+
+        printf("%f\n", rmse);
+        if(rmse < convergence_error) break;
+
         for(size_t j = 0; j < count_line(data_file); j++){
             int error = data.flag[j] - step(w[0], w[1], w[2], data.english[j], data.math[j]);
             if(error != 0){
@@ -66,4 +84,8 @@ int main(){
     free(data.flag);
 
     return 0;
+}
+
+double f(double a, double b, double x){
+    return a * x + b;
 }
