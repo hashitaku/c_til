@@ -12,8 +12,6 @@ double convergence_error_array[epoch];
 const double convergence_error = 0.0001;
 double w[3] = {[2] = 1.0}; //重みベクトル
 
-double f(double, double, double);
-
 int main(){
     
     FILE *data_file = fopen("data.txt", "r");
@@ -107,8 +105,4 @@ int main(){
     free(data.flag);
 
     return 0;
-}
-
-double f(double a, double b, double x){
-    return a * x + b;
 }
