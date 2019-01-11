@@ -45,12 +45,14 @@ int main(){
     fprintf(pipe, "set xlabel 'english points'\n");
     fprintf(pipe, "set ylabel 'math points'\n");
     // fprintf(pipe, "set terminal gif animate optimize delay 13 size 600, 600\n"); //gifへ出力 必要ないならコメントアウト
-    // fprintf(pipe, "set output 'tmp.gif'\n"); //gifへ出力 必要ないならコメントアウト
+    // fprintf(pipe, "set output 'machine_leaening.gif'\n"); //gifへ出力 必要ないならコメントアウト
 
     fprintf(pipe2, "set xrange [-1:%d]\n",epoch);
     fprintf(pipe2, "set yrange [-1:100]\n");
     fprintf(pipe2, "set xlabel 'epoch'\n");
     fprintf(pipe2, "set ylabel 'convergence_error'\n");
+    // fprintf(pipe2, "set terminal gif animate optimize delay 13 size 600, 600\n"); //gifへ出力 必要ないならコメントアウト
+    // fprintf(pipe2, "set output 'rmse.gif'\n"); //gifへ出力 必要ないならコメントアウト
 
     double ave_math = 0.0; //中心化のためのデータの平均値
     double ave_english = 0.0; //中心化のためのデータの平均値
