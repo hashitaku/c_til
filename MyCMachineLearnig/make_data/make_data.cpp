@@ -14,12 +14,7 @@ void make_data(std::ofstream &ref_out){
         }else if(math < english){
             flag = 1;
         }else{
-            int tmp = engine() % 2;
-            if(tmp == 0){
-                flag = -1;
-            }else{
-                flag = 1;
-            }
+            flag = (engine() % 2) * 2 - 1;
         }
 
         ref_out << english << " " << math << " " << flag << std::endl;
