@@ -2,3 +2,5 @@
 *.out
 *.gif
 /test.c
+/data_pre.txt
+/data.txt
