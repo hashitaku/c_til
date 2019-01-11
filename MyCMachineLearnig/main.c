@@ -7,15 +7,17 @@
 
 const double eta = 0.1; //学習率
 // const size_t epoch = 10; //学習回数
-enum {epoch = 10};
+enum {epoch = 10}; //配列の添字にしたいのでconst intはNG
 double convergence_error_array[epoch];
 const double convergence_error = 0.0001;
 double w[3] = {[2] = 1.0}; //重みベクトル
 
+double f(double, double, double);
+
 int main(){
     
     FILE *data_file = fopen("data.txt", "r");
-    Data data;
+    Data data; 
     
     if(data_file == NULL){
         fprintf(stderr, "data_file open error\n");
@@ -38,8 +40,8 @@ int main(){
         exit(1);
     }
 
-    fprintf(pipe, "set xrange [-25:125]\n");
-    fprintf(pipe, "set yrange [-25:125]\n");
+    fprintf(pipe, "set xrange [-75:75]\n");
+    fprintf(pipe, "set yrange [-75:75]\n");
     fprintf(pipe, "set xlabel 'english points'\n");
     fprintf(pipe, "set ylabel 'math points'\n");
     // fprintf(pipe, "set terminal gif animate optimize delay 13 size 600, 600\n"); //gifへ出力 必要ないならコメントアウト
@@ -49,6 +51,22 @@ int main(){
     fprintf(pipe2, "set yrange [-1:100]\n");
     fprintf(pipe2, "set xlabel 'epoch'\n");
     fprintf(pipe2, "set ylabel 'convergence_error'\n");
+
+    double ave_math = 0.0; //中心化のためのデータの平均値
+    double ave_english = 0.0; //中心化のためのデータの平均値
+
+    for(size_t i = 0; i < count_line(data_file); i++){
+        ave_english += data.english[i];
+        ave_math += data.math[i];
+    }
+
+    ave_english /= count_line(data_file); //平均
+    ave_math /= count_line(data_file); //平均
+
+    for(size_t i = 0; i < count_line(data_file); i++){
+        data.english[i] -= ave_english;
+        data.math[i] -= ave_math;
+    }
 
     for(size_t i = 0; i < epoch; i++){
         double rmse = 0.0;
@@ -105,4 +123,8 @@ int main(){
     free(data.flag);
 
     return 0;
+}
+
+double f(double a, double b, double x){
+    return a * x + b;
 }
