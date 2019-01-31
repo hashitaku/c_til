@@ -1,12 +1,12 @@
 # cmakeversion
 cmake_minimum_required(VERSION 3.10.2)
 
+# project name
+project(MyCLib C)
+
 # setting
 set(CMAKE_C_COMPILER clang)
 set(CMAKE_C_STANDARD 11)
-
-# project name
-project(MyCLib C)
 
 # compile option
 # cmake -DCMAKE_BUILD_TYPE=
@@ -27,3 +27,7 @@ add_subdirectory(data_structure/list)
 add_subdirectory(data_structure/vector)
 
 # create static lib
+
+# message
+message("C compiler is " ${CMAKE_C_COMPILER})
+message("C standard is " ${CMAKE_C_STANDARD})
