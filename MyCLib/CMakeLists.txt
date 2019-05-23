@@ -11,7 +11,7 @@ set(CMAKE_C_STANDARD 11)
 # compile option
 # cmake -DCMAKE_BUILD_TYPE=
 set(CMAKE_C_FLAGS "-pedantic")
-set(CMAKE_C_FLAGS_DEBUG "-Wall -Wextra")
+set(CMAKE_C_FLAGS_DEBUG "-Wall -Wextra -g -fsanitize=address -fno-omit-frame-pointer")
 set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
 
 # output directory
@@ -27,3 +27,7 @@ add_subdirectory(data_structure/list)
 add_subdirectory(data_structure/vector)
 
 # create static lib
+
+# message
+message("C compiler is " ${CMAKE_C_COMPILER})
+message("C standard is " ${CMAKE_C_STANDARD})

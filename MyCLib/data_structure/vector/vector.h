@@ -24,13 +24,13 @@ int vector_add_size(Vector *ptr_struct, size_t add_size);
 
 int vector_resize(Vector *ptr_struct, size_t chenge_size);
 
-bool vector_is_full(Vector *ptr_struct);
+bool vector_is_full(const Vector *ptr_struct);
 
 int vector_push_back(Vector *ptr_struct, T input);
 
-size_t vector_size(Vector *ptr_struct);
+size_t vector_size(const Vector *ptr_struct);
 
-size_t vector_max_size(Vector *ptr_struct);
+size_t vector_capacity(const Vector *ptr_struct);
 
 T *vector_at(Vector *ptr_struct, size_t n);
 

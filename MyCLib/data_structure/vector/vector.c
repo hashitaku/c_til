@@ -54,7 +54,7 @@ int vector_resize(Vector *ptr_struct, size_t chenge_size){
     }
 }
 
-bool vector_is_full(Vector *ptr_struct){
+bool vector_is_full(const Vector *ptr_struct){
     if(ptr_struct->size == ptr_struct->top){
         return true;
     }else{
@@ -75,11 +75,11 @@ int vector_push_back(Vector *ptr_struct, int input){
     }
 }
 
-size_t vector_size(Vector *ptr_struct){
+size_t vector_size(const Vector *ptr_struct){
     return ptr_struct->top;
 }
 
-size_t vector_max_size(Vector *ptr_struct){
+size_t vector_capacity(const Vector *ptr_struct){
     return ptr_struct->size;
 }
 
