@@ -54,7 +54,7 @@ int vector_resize(Vector *ptr_struct, size_t chenge_size){
     }
 }
 
-bool vector_is_full(Vector *ptr_struct){
+bool vector_is_full(const Vector *ptr_struct){
     if(ptr_struct->size == ptr_struct->top){
         return true;
     }else{
@@ -75,10 +75,34 @@ int vector_push_back(Vector *ptr_struct, int input){
     }
 }
 
-size_t vector_size(Vector *ptr_struct){
+size_t vector_size(const Vector *ptr_struct){
     return ptr_struct->top;
 }
 
-size_t vector_max_size(Vector *ptr_struct){
+size_t vector_capacity(const Vector *ptr_struct){
     return ptr_struct->size;
+}
+
+T *vector_at(Vector *ptr_struct, size_t n){
+    if(n >= vector_size(ptr_struct)){
+        fprintf(stderr, "vector out of range\n");
+        exit(1);
+    }
+
+    return &ptr_struct->data[n];
+}
+
+T vector_dot(const Vector *ptr_struct1, const Vector *ptr_struct2){
+    if(vector_size(ptr_struct1) != vector_size(ptr_struct2)){
+        fprintf(stderr, "vector dot size error\n");
+        exit(1);
+    }
+
+    T retval = 0;
+
+    for(size_t i = 0; i < vector_size(ptr_struct1); i++){
+        retval += (*vector_at(ptr_struct1, i)) * (*vector_at(ptr_struct2, i));
+    }
+
+    return retval;
 }
