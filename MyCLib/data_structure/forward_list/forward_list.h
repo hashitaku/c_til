@@ -1,5 +1,5 @@
-#ifndef FORWARD_LIST_H
-#define FORWARD_LIST_H
+#ifndef MYCLIB_FORWARD_LIST_H
+#define MYCLIB_FORWARD_LIST_H
 
 #include<stddef.h>
 #include<stdio.h>
@@ -25,4 +25,4 @@ void forward_list_push_back(Forward_list *ptr_struct, T input);
 
 T forward_list_at(Forward_list *ptr_struct, size_t n);
 
-#endif //FORWARD_LIST_H
+#endif //MYCLIB_FORWARD_LIST_H

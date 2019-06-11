@@ -1,5 +1,5 @@
-#ifndef STACK_H
-#define STACK_H
+#ifndef MYCLIB_STACK_H
+#define MYCLIB_STACK_H
 
 #include<stdio.h>
 
@@ -20,4 +20,4 @@ void stack_push(Stack *, int);
 
 int stack_pop(Stack *);
 
-#endif //STACK_H
+#endif //MYCLIB_STACK_H

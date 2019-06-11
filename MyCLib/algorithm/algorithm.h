@@ -1,8 +1,10 @@
-#ifndef ALGORITHM_H
-#define ALGORITHM_H
+#ifndef MYCLIB_ALGORITHM_H
+#define MYCLIB_ALGORITHM_H
 
 #include<stdbool.h>
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 void swap(int *, int *);
 
@@ -48,4 +50,4 @@ int lcm(int, int);
 
 char *rotate(char *, char *, char *);
 
-#endif ALGORITHM_H
+#endif //MYCLIB_ALGORITHM_H

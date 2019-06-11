@@ -1,5 +1,5 @@
-#ifndef QUEUE_H
-#define QUEUE_H
+#ifndef MYCLIB_QUEUE_H
+#define MYCLIB_QUEUE_H
 
 #include<stdio.h>
 
@@ -17,4 +17,4 @@ void queue_enqueue(Queue *, int);
 
 int queue_dequeue(Queue *);
 
-#endif QUEUE_H
+#endif //MYCLIB_QUEUE_H
