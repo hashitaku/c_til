@@ -1,5 +1,5 @@
-#ifndef MATRIX_H
-#define MATRIX_H
+#ifndef MYCLIB_MATRIX_H
+#define MYCLIB_MATRIX_H
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -19,4 +19,4 @@ double _Complex *at_matrix(Matrix *, size_t, size_t);
 
 void print_matrix(Matrix *);
 
-#endif //MATRIX_H
+#endif //MYCLIB_MATRIX_H

@@ -1,5 +1,5 @@
-#ifndef VECTOR_H
-#define VECTOR_H
+#ifndef MYCLIB_VECTOR_H
+#define MYCLIB_VECTOR_H
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -36,4 +36,4 @@ T *vector_at(Vector *ptr_struct, size_t n);
 
 T vector_dot(const Vector *ptr_struct1, const Vector *ptr_struct2);
 
-#endif //VECTOR_H
+#endif //MYCLIB_VECTOR_H

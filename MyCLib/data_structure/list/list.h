@@ -1,5 +1,5 @@
-#ifndef LIST_H
-#define LIST_H
+#ifndef MYCLIB_LIST_H
+#define MYCLIB_LIST_H
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -26,4 +26,4 @@ void list_push_front(List *ptr_struct, T input);
 
 void list_print(const List *ptr_struct);
 
-#endif //LIST_H
+#endif //MYCLIB_LIST_H
