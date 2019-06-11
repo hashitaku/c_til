@@ -1,1 +1,1 @@
-add_executable(forward_list STATIC forward_list.c)
+add_library(forward_list STATIC forward_list.c)

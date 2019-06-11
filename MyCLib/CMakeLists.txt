@@ -1,12 +1,12 @@
 # cmakeversion
 cmake_minimum_required(VERSION 3.10.2)
 
-# project name
-project(MyCLib C)
-
 # setting
 set(CMAKE_C_COMPILER clang)
 set(CMAKE_C_STANDARD 11)
+
+# project name
+project(MyCLib C)
 
 # compile option
 # cmake -DCMAKE_BUILD_TYPE=
@@ -24,7 +24,9 @@ add_subdirectory(algorithm)
 add_subdirectory(data_structure/stack)
 add_subdirectory(data_structure/queue)
 add_subdirectory(data_structure/list)
+add_subdirectory(data_structure/forward_list)
 add_subdirectory(data_structure/vector)
+add_subdirectory(data_structure/matrix)
 
 # create static lib
 
