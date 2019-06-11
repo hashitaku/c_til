@@ -101,7 +101,7 @@ T vector_dot(const Vector *ptr_struct1, const Vector *ptr_struct2){
     T retval = 0;
 
     for(size_t i = 0; i < vector_size(ptr_struct1); i++){
-        retval += (*vector_at(ptr_struct1, i)) * (*vector_at(ptr_struct2, i));
+        retval += (ptr_struct1->data[i]) * (ptr_struct2->data[i]);
     }
 
     return retval;
