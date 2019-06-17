@@ -17,10 +17,10 @@ void forward_list_free(Forward_list *ptr_struct){
         exit(1);
     }
 
-    struct Forward_list_impl *node = ptr_struct->begin;
+    struct Forward_list_node *node = ptr_struct->begin;
 
     while(node != NULL){
-        struct Forward_list_impl *next_node = node->next;
+        struct Forward_list_node *next_node = node->next;
         free(node);
         node = next_node;
     }
@@ -32,7 +32,7 @@ void forward_list_push_back(Forward_list *ptr_struct, T input){
         exit(1);
     }
 
-    struct Forward_list_impl *new_node = malloc(sizeof(struct Forward_list_impl));
+    struct Forward_list_node *new_node = malloc(sizeof(struct Forward_list_node));
 
     if(new_node == NULL){
         fprintf(stderr, "forward_list_push_back malloc error\n");
@@ -65,7 +65,7 @@ T forward_list_at(Forward_list *ptr_struct, size_t n){
         exit(1);
     }
 
-    struct Forward_list_impl *node = ptr_struct->begin;
+    struct Forward_list_node *node = ptr_struct->begin;
 
     for(size_t i = 0; i < n; i++){
         node = node->next;
