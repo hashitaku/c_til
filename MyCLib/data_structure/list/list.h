@@ -6,15 +6,15 @@
 
 typedef int T;
 
-struct List_impl{
+struct List_node{
     T data;
-    struct List_impl *prev;
-    struct List_impl *next; 
+    struct List_node *prev;
+    struct List_node *next; 
 };
 
 typedef struct{
-    struct List_impl *begin;
-    struct List_impl *end;
+    struct List_node *begin;
+    struct List_node *end;
     size_t size;
 }List;
 
