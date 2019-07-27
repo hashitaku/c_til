@@ -27,6 +27,7 @@ add_subdirectory(data_structure/list)
 add_subdirectory(data_structure/forward_list)
 add_subdirectory(data_structure/vector)
 add_subdirectory(data_structure/matrix)
+add_subdirectory(data_structure/binary_search_tree)
 
 # create static lib
 
