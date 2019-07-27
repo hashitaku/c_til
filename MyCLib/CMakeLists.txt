@@ -9,9 +9,9 @@ set(CMAKE_C_STANDARD 11)
 project(MyCLib C)
 
 # compile option
-# cmake -DCMAKE_BUILD_TYPE=
-set(CMAKE_C_FLAGS "-pedantic")
-set(CMAKE_C_FLAGS_DEBUG "-Wall -Wextra -g -fsanitize=address -fno-omit-frame-pointer")
+# cmake -DCMAKE_BUILD_TYPE=(DEBUG or RELEASE)
+set(CMAKE_C_FLAGS "-std=c11 -pedantic")
+set(CMAKE_C_FLAGS_DEBUG "-Wall -Wextra -g -fsanitize=address")
 set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
 
 # output directory

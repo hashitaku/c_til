@@ -7,15 +7,15 @@
 
 typedef int T;
 
-struct Forward_list_impl{
+struct Forward_list_node{
     T data;
-    struct Forward_list_impl *next;
+    struct Forward_list_node *next;
 };
 
 typedef struct{
     size_t size;
-    struct Forward_list_impl *begin;
-    struct Forward_list_impl *end;
+    struct Forward_list_node *begin;
+    struct Forward_list_node *end;
 }Forward_list;
 
 void forward_list_init(Forward_list *ptr_struct);
