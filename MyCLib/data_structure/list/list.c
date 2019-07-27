@@ -15,7 +15,7 @@ int list_init(List *ptr_struct){
 
 void list_free(List *ptr_struct){
     while(ptr_struct->begin != NULL){
-        struct List_impl *next_node = ptr_struct->begin->next;
+        struct List_node *next_node = ptr_struct->begin->next;
         free(ptr_struct->begin);
         ptr_struct->begin = next_node;
     }
@@ -27,7 +27,7 @@ void list_push_back(List *ptr_struct, T input){
         exit(1);
     }
 
-    struct List_impl *new_node = malloc(sizeof(struct List_impl));
+    struct List_node *new_node = malloc(sizeof(struct List_node));
 
     if(new_node == NULL){
         fprintf(stderr, "list_push_back malloc error\n");
@@ -57,7 +57,7 @@ void list_push_front(List *ptr_struct, T input){
         exit(1);
     }
 
-    struct List_impl *new_node = malloc(sizeof(struct List_impl));
+    struct List_node *new_node = malloc(sizeof(struct List_node));
 
     if(new_node == NULL){
         fprintf(stderr, "list_push_front malloc error\n");
@@ -82,7 +82,7 @@ void list_push_front(List *ptr_struct, T input){
 }
 
 void list_print(const List *ptr_struct){
-    struct List_impl *node = ptr_struct->begin;
+    struct List_node *node = ptr_struct->begin;
     while(node != NULL){
         printf("%d\n", node->data);
         node = node->next;
