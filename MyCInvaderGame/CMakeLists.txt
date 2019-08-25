@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(glut_game C)
-
 set(CMAKE_C_COMPILER clang)
 set(CMAKE_C_STANDARD 11)
+
+project(glut_game C)
 
 file(COPY "${CMAKE_SOURCE_DIR}/data" DESTINATION "${CMAKE_BINARY_DIR}")
 
