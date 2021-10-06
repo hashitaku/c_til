@@ -1,0 +1,1 @@
+add_library(binary_search_tree STATIC binary_search_tree.c)
